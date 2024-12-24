@@ -63,7 +63,7 @@ body {
     gap: 15px;
     letter-spacing: 2px;
     padding: 0 15px;
-    max-width: 50%;
+    max-width: 55%;
 
 }
 
@@ -97,7 +97,6 @@ body {
 }
 
 .home .redes-sociais a i:hover {
-    color #9443d8;
     border: 1px solid #9443d8;
     transform: scale(1.1);
 }
@@ -185,7 +184,6 @@ body {
     background: none;
     border: 1px solid #fff;
     border-radius: 15px;
-    color #fff;
     width: 180px;
     padding: 20px;
     font-size: 18px;
@@ -195,6 +193,10 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer
+}
+
+.btn-mostrar-projetos {
+    color: white;
 }
 
 .projetos .btn-mostrar-projetos:hover {
