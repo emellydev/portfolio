@@ -53,7 +53,7 @@ body {
     display: flex;
     min-height: calc(100vh - 125px);
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     justify-content: space-between;
 }
 
@@ -63,9 +63,13 @@ body {
     gap: 15px;
     letter-spacing: 2px;
     padding: 0 15px;
-    max-width: 55%;
-
+    max-width: 60%;
 }
+
+.home .informacoes .informacoes {
+    max-width: 100%;
+}
+
 
 .home .informacoes h1 {
     font-family: "Raleway", sans-serif;
@@ -108,6 +112,7 @@ body {
 
 .home .container-foto img {
     width: 100%;
+    height: auto;
     border-radius: 50%;
 }
 
