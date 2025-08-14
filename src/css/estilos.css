@@ -1,15 +1,22 @@
 html {
     color: #fff;
     scroll-behavior: smooth;
+    background-color: #000000; 
+    background-image:
+           radial-gradient(circle 600px at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(255, 255, 255, 0.122), transparent 80%),
+           linear-gradient(150deg, #000000, #9e00ff);
+       background-repeat: no-repeat;
+       background-attachment: fixed; 
+   
 }
 
 body {
-    background-color: #282828;
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
     max-width: 1120px;
-    background: linear-gradient(150deg, #000000, #9e00ff);
     background-size: 120% 120%;
+    position: relative;
+    background-color: transparent;
 }
 
 .cabecalho {
@@ -25,7 +32,7 @@ body {
     border-radius: 50%;
     border: 2px solid #fff;
     text-align: center;
-    line-height: 55px;
+    line-height: 58px;
     font-family: "Raleway", sans-serif;
     transition: 0.2s;
 }
@@ -78,30 +85,71 @@ body {
 
 .home .informacoes p {
     font-family: "Raleway", sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 8px;
 }
 
 .home .redes-sociais {
     display: flex;
-    gap: 20px;
+    gap: 20px;;
 }
 
-.home .redes-sociais a i {
-    border: 1.6px solid #fff;
-    border-radius: 50px;
+.home .redes-sociais li a {
+    display: block;
     width: 50px;
     height: 50px;
-    padding: 10px;
-    text-align: center;
-    font-size: 26px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    line-height: 46px;
+    position: relative;
+    overflow: hidden;
     transition: 0.3s;
-
+    text-align: center;
 }
 
-.home .redes-sociais a i:hover {
-    border: 1.5px solid #9443d8;
-    transform: scale(1.1);
+.home .redes-sociais li a i {
+    font-size: 26px;
+    color: #fff;
+    position: relative; 
+    top: 5px;
+    z-index: 2; 
+    transition: color 0.4s ease-in-out;
+    text-align: center;
+}
+
+.home .redes-sociais li a::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    transition: top 0.4s ease-in-out;
+}
+
+.home .redes-sociais li a:hover {
+    border-color: transparent;
+}
+
+.home .redes-sociais li a:hover::before {
+    top: 0;
+}
+
+.home .redes-sociais li:nth-child(1) a::before {
+    background: #0077b5;
+}
+
+.home .redes-sociais li:nth-child(2) a::before {
+    background-color: #dd4b39;
+}
+
+.home .redes-sociais li:nth-child(3) a::before {
+    background-color: #272626;
+}
+
+.home .redes-sociais li:nth-child(4) a::before {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
 .home .container-foto .foto {
@@ -132,7 +180,7 @@ body {
     font-size: 45px;
     font-weight: 500;
     text-transform: uppercase;
-}
+} 
 
 .projetos .container-projetos {
     display: flex;
@@ -143,10 +191,10 @@ body {
 }
 
 .projetos .projeto {
+    position: relative;
+    display: none;  
     max-width: 260px;
     max-height: 500px;
-    position: relative;
-    display: none;
 }
 
 .projetos .projeto.ativo {
@@ -154,12 +202,15 @@ body {
 }
 
 .projetos .projeto img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .projetos .projeto h3 {
-    background-color: #040203;
-    
+    background-color: #040203; 
     width: 100%;
     padding-left: 20px;
     padding-bottom: 10px;
@@ -169,6 +220,10 @@ body {
 }
 
 .projetos .projeto .informacoes-projeto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
     background-color: #040203;
     position: absolute;
     top: 0;
@@ -176,37 +231,33 @@ body {
     height: 100%;
     font-weight: 600;
     opacity: 0;
-    transition: 0.3s;
+    transition: opacity 0.3s;
     padding: 18px;
-    
+    border-radius: 5px; 
 }
 
 .projetos .projeto .tecnologias {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
-    margin-bottom: 4px;
+    row-gap: 17px;
+    justify-content: left;
 }
 
 .projetos .projeto .tecnologias li span {
-    background-color: #5f1c72;
-    color: #f2cdfc;
+    background-color: rgba(255, 255, 255, 0.118);
+    color: rgba(255, 255, 255, 0.8);
     padding: 5px 10px;
     font-size: 14px;
     font-weight: 500;
     border-radius: 12px;
-    
-}
-
-.projetos .projeto p {
-   margin: 14px 0;
-    
+    border: 1px solid rgba(25, 24, 25, 0.227); 
 }
 
 .projetos .container-projetos .projeto:hover .informacoes-projeto {
     opacity: 1;
     background-color: #000000ca;
-    
+    border-radius: 4px;  
 }
 
 .projetos .btn-mostrar-projetos {

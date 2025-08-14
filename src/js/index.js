@@ -26,3 +26,9 @@ function mostrarMaisProjetos() {
     botaoMostrarProjetos.classList.add('ativo');
     botaoMostrarProjetos.textContent = 'Mostrar menos';
 }
+
+
+document.documentElement.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+});
