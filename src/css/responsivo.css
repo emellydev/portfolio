@@ -19,25 +19,23 @@
 }
 
     .projetos .projeto {
-        max-width: 260px;
-        max-height: 500px;
+        max-width: 420px;
+        min-height: 400px;
         position: relative;
         display: none;
     }
 
     .projetos .projeto img {
-        height: 100%;
+        height: auto;
+        width: 100%;
         border-radius: 5px;
         overflow: hidden;
     }
 
- 
 
     .projetos .container-projetos {
         padding: 0 30px;
     }
-
-
 
 
 @media(max-width: 425px) {

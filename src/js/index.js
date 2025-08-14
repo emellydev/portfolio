@@ -32,3 +32,20 @@ document.documentElement.addEventListener('mousemove', (e) => {
     document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
 });
+
+
+const text = 'Olá! sou Emelly Beatriz |'
+const typedE1 = document.querySelector('.typed');
+
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        typedE1.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 120);
+    }
+}
+window.addEventListener('DOMContentLoaded', type);
+
+
