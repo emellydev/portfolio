@@ -1,5 +1,6 @@
 const botaoMostrarProjetos = document.querySelector(".btn-mostrar-projetos");
 const projetosInativos = document.querySelectorAll(".projeto:not(.ativo)");
+const secaoProjetos = document.querySelector("#projetos");
 
 botaoMostrarProjetos.addEventListener("click", () => {
   const botaoEstaAtivo = botaoMostrarProjetos.classList.contains("ativo");
@@ -18,6 +19,7 @@ function esconderProjetos() {
   });
   botaoMostrarProjetos.classList.remove("ativo");
   botaoMostrarProjetos.textContent = "Mostrar mais";
+  secaoProjetos.scrollIntoView({ behavior: "smooth" });
 }
 
 // Mostrar mais projetos

@@ -14,7 +14,6 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-size: 120% 120%;
   position: relative;
   background-color: transparent;
 }
@@ -46,7 +45,7 @@ body {
   font-size: 20px;
   text-transform: capitalize;
   padding: 10px 20px;
-  transition: 0, 2s;
+  transition: 0.2s;
 }
 
 .cabecalho .menu li a:hover {
@@ -100,12 +99,13 @@ body {
 }
 
 .home .redes-sociais li a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 2px solid #fff;
-  line-height: 46px;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
@@ -116,7 +116,6 @@ body {
   font-size: 26px;
   color: #fff;
   position: relative;
-  top: 5px;
   z-index: 2;
   transition: color 0.4s ease-in-out;
   text-align: center;
@@ -177,7 +176,6 @@ body {
 
 .home .foto.sombra-interna {
   background: linear-gradient(to right, #8a35c8, #18c063, #00eea2);
-
   background-size: 180% 180%;
   animation: gradient-animation 5s ease infinite;
 }
@@ -212,10 +210,12 @@ body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #2e2e2e;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .projetos .projeto:hover {
+  box-shadow: 0 8px 25px rgba(148, 67, 216, 0.3);
   transform: translateY(-5px);
 }
 
@@ -233,8 +233,7 @@ body {
 .projetos .projeto img {
   height: auto;
   width: 100%;
-  object-fit: contain;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 0px;
   background-color: #111;
@@ -292,6 +291,12 @@ body {
   border: 1px solid rgba(25, 24, 25, 0.227);
 }
 
+.projetos .projeto .tecnologias li span:hover {
+  background-color: #9443d8;
+  color: #fff;
+  transition: 0.3s;
+}
+
 .projetos .projeto:hover .informacoes-projeto {
   opacity: 1;
   background-color: #000000c7;
@@ -332,6 +337,7 @@ body {
   width: 100%;
   margin: auto;
   border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
 .skills h2,
@@ -364,7 +370,6 @@ body {
 }
 .skills .container-skills img:hover {
   transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
   filter: drop-shadow(0 0 10px #9543d885);
 }
 
@@ -380,14 +385,8 @@ body {
   max-width: 90%;
   margin: auto;
   position: relative;
-}
-
-.certificates-container::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, rgb(0, 0, 0) 3%, black 95%, transparent);
 }
 
 .certificates-slide {
@@ -398,8 +397,6 @@ body {
 .certificates-slide a {
   cursor: pointer;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
   padding: 25px;
   margin: 0px 15px;
   width: 400px;
@@ -441,5 +438,3 @@ body {
     transform: translateX(-50%);
   }
 }
-
-
