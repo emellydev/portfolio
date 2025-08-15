@@ -25,7 +25,7 @@
 <body>
     <header class="header">
         <a href="#">
-            <h1 class="logo">EB</h1>
+            <div class="logo">EB</div>
         </a>
 
         <nav class="menu">
@@ -83,8 +83,7 @@
 
             <div class="project active">
                 <a href="https://imersao-dados-python-alura-emellydev.streamlit.app/" target="_blank">
-                    <img src="src/imagens/dashboard-imersao-dados.png" alt="Projeto Validador de CPF">
-
+                <img src="src/imagens/dashboard-imersao-dados.png" alt="Projeto Validador de CPF">
                     <div class="project-content">
                         <h3>Dashboard de análise de salários na área de dados</h3>
                         <p>
@@ -236,27 +235,6 @@
                 </a>
             </div>
 
-            <div class="project">
-                <a href="https://emellydev.github.io/calculadora/" target="_blank">
-                    <img src="src/imagens/calculadora-nova.png" alt="Projeto Calculadora">
-
-                    <div class="project-content">
-                        <h3>Calculadora</h3>
-                        <p>
-                            Uma calculadora funcional que permite realizar operações básicas como soma, subtração, multiplicação e divisão. Este projeto também implementa a prioridade dos operadores, garantindo que as operações dentro de parênteses sejam calculadas primeiro.
-                        </p>
-                    </div>
-
-                    <div class="project-information">
-                        <ul class="technologies">
-                            <li><span>HTML</span></li>
-                            <li><span>CSS</span></li>
-                            <li><span>JavaScript</span></li>
-                        </ul>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
-            </div>
 
             <div class="project">
                 <a href="https://emellydev.github.io/calculadora-simples/" target="_blank">
@@ -326,19 +304,38 @@
     </section>
 
     <section class="skills">
-        <h2 class="title">Habilidades</h2>
+        <h2 class="title auto-show">Habilidades</h2>
         <div class="container-skills">
-            <img src="src/images-skills-svg/html.svg" alt="HTML">
-            <img src="src/images-skills-svg/css.svg" alt="CSS">
-            <img src="src/images-skills-svg/js.svg" alt="JavaScript">
-            <img src="src/images-skills-svg/python.svg" alt="Python">
-            <img src="src/images-skills-svg/mysql.svg" alt="MySQL">
-            <img src="src/images-skills-svg/vscode.svg" alt="vscode">
+            <div class="skill-item">
+                <img src="src/images-skills-svg/html.svg" alt="Ícone do HTML5">
+                <span>HTML</span>
+            </div>
+            <div class="skill-item">
+                <img src="src/images-skills-svg/css.svg" alt="Ícone do CSS3">
+                <span>CSS</span>
+            </div>
+            <div class="skill-item">
+                <img src="src/images-skills-svg/js.svg" alt="Ícone do JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+                <img src="src/images-skills-svg/python.svg" alt="Ícone do Python">
+                <span>Python</span>
+            </div>
+            <div class="skill-item">
+                <img src="src/images-skills-svg/mysql.svg" alt="Ícone do MySQL">
+                <span>MySQL</span>
+            </div>
+            <div class="skill-item">
+                <img src="src/images-skills-svg/vscode.svg" alt="Ícone do VS Code">
+                <span>VS Code</span>
+            </div>
         </div>
     </section>
 
-    <section class="certificates">
+    <section class="certificates auto-show">
         <h2 class="title">Certificados</h2>
+            <p>Aqui estão alguns dos meus certificados.</p>
             <div class="certificates-container">
                 <div class="certificates-slide">
                     <a href="https://1drv.ms/b/c/f8120291656d6c7c/EfiMGaLfRIhEmScGtRPJ8RQB95zGQYQJ4piPToO5gEx_mQ?e=9U2dZr" target="_blank" title="Abrir Certificado"><img src="src/infinite-certificate-carousel-starter/tecnicas-engenharia-prompt.png" alt="Certificado de Técnicas de Engenharia de Prompt"></a>
@@ -356,13 +353,29 @@
                     <a href="https://1drv.ms/b/c/f8120291656d6c7c/EeAoV37JXmBAoJMAxEvfnIkBWlmqDakH4gpeQ4fizEuT9A?e=6IS3sX" target="_blank" title="Abrir Certificado"><img src="src/infinite-certificate-carousel-starter/introducao_ao_java_e_seu_ambiente_de_desenvolvimento.png" alt="Certificado de Introdução ao Java"></a>
 
                     <a href="https://1drv.ms/b/c/f8120291656d6c7c/ETTiEfgQWh5Ivh17tUP-XUIBK4FbDXVDbKQl925pdFvpyQ?e=lEXtP8" target="_blank" title="Abrir Certificado"><img src="src/infinite-certificate-carousel-starter/escrevendo_prompts_eficazes.png" alt="Certificado de Escrevendo Prompts Eficazes"></a>
-
                 </div>
             </div>
     </section>
 
+    <section class="form-container">
+        <h2 class="title auto-show">Envie sua Mensagem!</h2>
+        <form action="https://formsubmit.co/emellybmuniz@gmail.com" method="POST" class="form">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required/>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required/>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
+            <input type="hidden" name="_next" value="https://emellydev.github.io/portfolio-simplificado/src/obrigado.html"/>
+            <button type="submit" class="btn-submit">Enviar</button>
+       </form>
+        </section>
 
+    <a href="#" id="scrollTopBtn" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <script src="./src/js/index.js"></script>   
+    <script src="./src/js/animation.js"></script>   
 </body>
 
 </html>

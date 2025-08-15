@@ -31,10 +31,20 @@ function showMoreProjects() {
   showProjectsButton.textContent = "Mostar menos";
 }
 
+
 // Parallax effect
+let isTicking = false;
+
 document.documentElement.addEventListener("mousemove", (e) => {
-  document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
-  document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+  if (!isTicking) {
+    window.requestAnimationFrame(() => {
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+      isTicking = false;
+    });
+
+    isTicking = true;
+  }
 });
 
 // Typing effect
@@ -59,3 +69,12 @@ window.addEventListener("load", () => {
   slideContainer.innerHTML += slideContent;
 });
 
+// Btn scroll to top logic
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});

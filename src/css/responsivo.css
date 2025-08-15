@@ -51,4 +51,12 @@
   .projects {
     padding: 30px;
   }
+
+  #scrollTopBtn {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
+  }
 }

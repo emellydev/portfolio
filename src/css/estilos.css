@@ -31,6 +31,8 @@ body {
   border-radius: 50%;
   border: 2px solid #fff;
   text-align: center;
+  font-size: 28px;
+  font-weight: bold;
   line-height: 58px;
   font-family: "Raleway", sans-serif;
   transition: 0.2s;
@@ -207,16 +209,24 @@ body {
   max-height: none;
   min-height: 400px;
   background-color: #0c0c0c;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  position: relative;
   border: 1px solid #2e2e2e;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .projects .project:hover {
-  box-shadow: 0 8px 25px rgba(148, 67, 216, 0.3);
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  border: 2.1px solid transparent;
+  border-color: transparent;
+  background-image: linear-gradient(to right, #9443d8, #00eea2),
+    linear-gradient(to right, #0c0c0c, #0c0c0c);
+  background-clip: border-box, padding-box;
+  background-origin: border-box;
+  box-shadow: 0 0 18px rgba(0, 238, 162, 0.4);
 }
 
 .projects .project.active {
@@ -237,6 +247,7 @@ body {
   object-fit: cover;
   border-radius: 0px;
   background-color: #111;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .projects .project .project-content {
@@ -282,24 +293,29 @@ body {
 }
 
 .projects .project .technologies li span {
-  background-color: rgba(255, 255, 255, 0.118);
-  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   padding: 5px 10px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 12px;
-  border: 1px solid rgba(25, 24, 25, 0.227);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease;
 }
 
 .projects .project .technologies li span:hover {
-  background-color: #9443d8;
+  background-color: rgba(148, 67, 216, 0.7);
   color: #fff;
-  transition: 0.3s;
 }
 
 .projects .project:hover .project-information {
   opacity: 1;
-  background-color: #000000c7;
+  background-color: rgba(26, 24, 45, 0.85);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+
 }
 
 .projects .btn-show-projects {
@@ -330,23 +346,39 @@ body {
   display: none;
 }
 
-.skills,
-.certificates {
-  background-color: #040203c4;
-  padding: 40px 20px;
-  width: 100%;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+.certificates, .skills {
+  background-color: rgba(22, 20, 37, 0.649);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  padding: 50px;
+}
+
+.certificates p {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .skills h2,
-.certificates h2 {
+.certificates h2, 
+.form-container .title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 45px;
   font-weight: 500;
   text-transform: uppercase;
+  filter: drop-shadow(0 0 10px #9543d885);
+}
+
+.form-container .title {
+  filter: none;
+  font-size: 40px;
+}
+
+.skills {
+  margin-top: 25px;
 }
 
 .skills .container-skills {
@@ -360,33 +392,77 @@ body {
   flex: 1;
   flex-basis: auto;
   gap: 20px;
+  border-radius: 14px;
+  padding: 25px;
+  background: rgba(27, 26, 40, 0.75);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.skills .container-skills img {
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+.skills .container-skills .skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 120px;
+  text-align: center;
+  margin: 20px 0px;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
 }
-.skills .container-skills img:hover {
+
+.skills .container-skills .skill-item img {
+  width: 80px;
+  height: 80px;
+  transition: filter 0.3s ease-in-out;
+}
+
+.skills .container-skills .skill-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #c4c4c4;
+  transition: color 0.3s ease;
+}
+
+.skills.in-view .container-skills .skill-item {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.skills.in-view .container-skills .skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skills.in-view .container-skills .skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skills.in-view .container-skills .skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skills.in-view .container-skills .skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skills.in-view .container-skills .skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skills.in-view .container-skills .skill-item:nth-child(6) { animation-delay: 0.6s; }
+
+.skills .container-skills .skill-item:hover {
   transform: scale(1.1);
+}
+
+.skills .container-skills .skill-item:hover img {
   filter: drop-shadow(0 0 10px #9543d885);
 }
 
+.skills .container-skills .skill-item:hover span {
+  color: #fff;
+}
+
 .certificates {
-  margin: 20px auto;
+  padding: 50px;
+  margin-top: 5px;
 }
 
 .certificates-container {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  padding: 60px 0px;
-  max-width: 90%;
+  width: 100%;
   margin: auto;
   position: relative;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 95%, transparent);
-  mask-image: linear-gradient(to right, transparent, rgb(0, 0, 0) 3%, black 95%, transparent);
 }
 
 .certificates-slide {
@@ -402,7 +478,7 @@ body {
   width: 400px;
   height: 300px;
   background-color: #f3f3f3f4;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -414,6 +490,115 @@ body {
 
 .certificates-container:hover .certificates-slide {
   animation-play-state: paused;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: rgb(27, 26, 26);
+  padding: 80px 20px;
+}
+
+.form-container .title {
+  margin: 0 0 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+  width: 100%;
+}
+
+.form label {
+  font-size: 18px;
+  color: #c4c4c4;
+  margin-bottom: 5px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #777;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #9443d8;
+  box-shadow: 0 0 10px rgba(148, 67, 216, 0.5);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form .btn-submit {
+  background-color: #9443d8;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form .btn-submit:hover {
+  background-color: #7a37b3;
+  transform: translateY(-2px);
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #00bf82;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  font-size: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  visibility: hidden;
+  align-items: center;
+  transform: translateY(15px);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.auto-show {
+  animation: text-appear 1s both;
+  view-timeline: view();
+  animation-range: entry 20% cover 40%;
 }
 
 @keyframes gradient-animation {
@@ -436,5 +621,29 @@ body {
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+@keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
