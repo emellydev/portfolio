@@ -1,5 +1,5 @@
 @media (max-width: 1200px) {
-  .cabecalho {
+  .header {
     padding: 30px;
   }
 
@@ -10,45 +10,45 @@
     gap: 30px;
   }
 
-  .home .informacoes {
+  .home .informations {
     max-width: 100%;
     text-align: center;
     align-items: center;
   }
 }
 
-.projetos .projeto {
+.projects .project {
   max-width: 420px;
   min-height: 400px;
   position: relative;
   display: none;
 }
 
-.projetos .projeto img {
+.projects .project img {
   height: auto;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.projetos .container-projetos {
+.projects .projects-container {
   padding: 0 30px;
 }
 
 @media (max-width: 425px) {
-  .home .informacoes h1 {
+  .home .informations h1 {
     font-size: 30px;
   }
 
-  .home .informacoes p {
+  .home .informations p {
     font-size: 16px;
   }
 
-  .home .container-foto img {
+  .home .photo-container img {
     max-width: 320px;
   }
 
-  .projetos {
+  .projects {
     padding: 30px;
   }
 }

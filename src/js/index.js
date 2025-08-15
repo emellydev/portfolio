@@ -1,61 +1,61 @@
-const botaoMostrarProjetos = document.querySelector(".btn-mostrar-projetos");
-const projetosInativos = document.querySelectorAll(".projeto:not(.ativo)");
-const secaoProjetos = document.querySelector("#projetos");
+const showProjectsButton = document.querySelector(".btn-show-projects");
+const inactiveProjects = document.querySelectorAll(".project:not(.active)");
+const projectsSection = document.querySelector("#projects");
 
-botaoMostrarProjetos.addEventListener("click", () => {
-  const botaoEstaAtivo = botaoMostrarProjetos.classList.contains("ativo");
+showProjectsButton.addEventListener("click", () => {
+  const isButtonActive = showProjectsButton.classList.contains("active");
 
-  if (botaoEstaAtivo) {
-    esconderProjetos();
+  if (isButtonActive) {
+    hideProjects();
   } else {
-    mostrarMaisProjetos();
+    showMoreProjects();
   }
 });
 
-// Esconder os projetos
-function esconderProjetos() {
-  projetosInativos.forEach((projetoInativo) => {
-    projetoInativo.classList.remove("ativo");
+// Hide projects
+function hideProjects() {
+  inactiveProjects.forEach((inactiveProject) => {
+    inactiveProject.classList.remove("active");
   });
-  botaoMostrarProjetos.classList.remove("ativo");
-  botaoMostrarProjetos.textContent = "Mostrar mais";
-  secaoProjetos.scrollIntoView({ behavior: "smooth" });
+  showProjectsButton.classList.remove("active");
+  showProjectsButton.textContent = "Mostrar mais";
+  projectsSection.scrollIntoView({ behavior: "smooth" });
 }
 
-// Mostrar mais projetos
-function mostrarMaisProjetos() {
-  projetosInativos.forEach((projetoInativo) => {
-    projetoInativo.classList.add("ativo");
+// Show more projects
+function showMoreProjects() {
+  inactiveProjects.forEach((inactiveProject) => {
+    inactiveProject.classList.add("active");
   });
-  botaoMostrarProjetos.classList.add("ativo");
-  botaoMostrarProjetos.textContent = "Mostrar menos";
+  showProjectsButton.classList.add("active");
+  showProjectsButton.textContent = "Mostar menos";
 }
 
-// Efeito de parallax
+// Parallax effect
 document.documentElement.addEventListener("mousemove", (e) => {
   document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
   document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
 });
 
-// Efeito de digitação
+// Typing effect
 const text = "Olá! sou a Emelly Beatriz.";
-const typedE1 = document.querySelector(".typed");
+const typedEl = document.querySelector(".typed");
 
 let i = 0;
 
 function type() {
   if (i < text.length) {
-    typedE1.textContent += text.charAt(i);
+    typedEl.textContent += text.charAt(i);
     i++;
     setTimeout(type, 120);
   }
 }
 window.addEventListener("DOMContentLoaded", type);
 
-// Efeito slide certificados
+// Certificate slide effect
 window.addEventListener("load", () => {
-  const slide = document.querySelector(".certificates-slide");
-  const slideContent = slide.innerHTML;
-  slide.innerHTML += slideContent; 
+  const slideContainer = document.querySelector(".certificates-slide");
+  const slideContent = slideContainer.innerHTML;
+  slideContainer.innerHTML += slideContent;
 });
 
