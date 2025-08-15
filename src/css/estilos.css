@@ -373,32 +373,42 @@ body {
 }
 
 .certificates-container {
+  display: flex;
   overflow: hidden;
   white-space: nowrap;
   padding: 60px 0px;
   max-width: 90%;
   margin: auto;
+  position: relative;
 }
 
-.certificates-container .certificates-slide {
-  animation: 20s slide infinite linear;
-  white-space: nowrap;
+.certificates-container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.certificates-slide {
+  display: flex;
+  animation: slide 78s linear infinite;
 }
 
 .certificates-slide a {
   cursor: pointer;
-  display: inline-flex;
-  vertical-align: middle;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   padding: 25px;
-  margin-right: 40px;
+  margin: 0px 15px;
   width: 400px;
   height: 300px;
   background-color: #f3f3f3f4;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .certificates-slide a img {
     height: 100%;
     width: 100%;
@@ -428,6 +438,8 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-248%);
+    transform: translateX(-50%);
   }
 }
+
+

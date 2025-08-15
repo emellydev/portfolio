@@ -52,7 +52,8 @@ window.addEventListener("DOMContentLoaded", type);
 
 // Efeito slide certificados
 window.addEventListener("load", () => {
-    const slide = document.querySelector(".certificates-slide");
-    const slideContent = slide.innerHTML;
-    slide.innerHTML += slideContent; 
+  const slide = document.querySelector(".certificates-slide");
+  const slideContent = slide.innerHTML;
+  slide.innerHTML += slideContent; 
 });
+
