@@ -1,3 +1,7 @@
+.header .menu .mobile-only {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .header {
     padding: 30px;
@@ -35,7 +39,124 @@
   padding: 0 30px;
 }
 
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header .menu {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 14, 22, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+
+  .header .menu.menu-open {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header .menu .menu-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .header .menu li a, .header .menu li button {
+    font-size: 24px;
+  }
+
+  .header .menu li button {
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-family: inherit;
+    color: inherit;
+  }
+
+  .header .menu li a:hover,
+  .header .menu li button:hover {
+    background-color: transparent;
+  }
+
+  .header .menu .desktop-only {
+    display: none;
+  }
+
+  .header .menu .mobile-only {
+    display: list-item;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    min-height: auto;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .home .informations {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home .informations h1 {
+    font-size: 35px;
+  }
+
+  .home .informations p {
+    font-size: 18px;
+  }
+
+  .home .photo-container .foto {
+    max-width: 300px;
+  }
+
+  .projects .project {
+    max-width: 340px;
+  }
+
+  .skills .container-skills {
+    padding: 15px;
+  }
+
+  .certificates-slide a {
+    width: 300px;
+    height: 225px;
+  }
+
+  .form-container {
+    padding: 50px 15px;
+  }
+}
+
 @media (max-width: 425px) {
+
+  html {
+    background-image: none;
+    background-color: #000000;
+  }
+  
+  
   .home .informations h1 {
     font-size: 30px;
   }
@@ -50,6 +171,10 @@
 
   .projects {
     padding: 30px;
+  }
+
+  .form-container .title {
+    font-size: 30px;
   }
 
   #scrollTopBtn {
