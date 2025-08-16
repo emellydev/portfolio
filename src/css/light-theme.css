@@ -10,8 +10,8 @@ html.light-mode .header .logo {
 }
 
 html.light-mode .header a:hover .logo {
-  color: #ab77d8;
-  border: 2px solid #ab77d8;
+  color: #9443d8;
+  border: 2px solid #9443d8;
 }
 
 html.light-mode .header .menu li a {
@@ -52,16 +52,10 @@ html.light-mode .home .foto.sombra-interna {
 }
 
 html.light-mode .header .menu li a:hover {
-  background-color: #c98bff;
+  background-color: #9443d8;
   color: #fff;
-  border-radius: 50px;
 }
 
-html.light-mode .header .menu .dropdown:hover > a {
-  background-color: #c98bff;
-  border-radius: 10px 10px 0 0;
-  color: #fff;
-}
 
 html.light-mode .projects .project {
   background-color: #ffffff;
@@ -76,7 +70,7 @@ html.light-mode .projects .btn-show-projects {
 
 html.light-mode .projects .btn-show-projects:hover {
   color: #fff;
-  background-color: #ab70dd;
+  background-color: #9443d8;
 }
 
 html.light-mode .certificates,

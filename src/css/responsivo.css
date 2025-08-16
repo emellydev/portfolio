@@ -107,7 +107,7 @@
   }
 
   .home {
-    flex-direction: column-reverse;
+    flex-direction: column;
     min-height: auto;
     gap: 30px;
     padding: 40px 0;
