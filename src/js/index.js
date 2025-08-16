@@ -28,7 +28,7 @@ function showMoreProjects() {
     inactiveProject.classList.add("active");
   });
   showProjectsButton.classList.add("active");
-  showProjectsButton.textContent = "Mostar menos";
+  showProjectsButton.textContent = "Mostrar menos";
 }
 
 

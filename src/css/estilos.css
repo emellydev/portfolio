@@ -1,19 +1,32 @@
 html {
-  color: #fff;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Raleway", sans-serif;
+
+  /* Dark Theme Colors */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #9443d8;
+  --primary-color-darker: #7a37b3;
+  --primary-color-shadow: #9543d885;
+  --surface-color: rgba(27, 26, 40, 0.75);
+  --surface-border-color: rgba(255, 255, 255, 0.1);
+  --text-secondary-color: #c4c4c4;
+
+  color: var(--text-color);
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: var(--bg-color);
   background-image: radial-gradient(
       circle 600px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
       rgba(255, 255, 255, 0.122),
       transparent 80%
     ),
-    linear-gradient(150deg, #000000, #9e00ff);
+    linear-gradient(150deg, var(--bg-color), #9e00ff);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   position: relative;
   background-color: transparent;
 }
@@ -33,18 +46,18 @@ body.body-no-scroll {
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  border: 2.5px solid #fff;
+  border: 2.5px solid var(--text-color);
   text-align: center;
   font-size: 28px;
   font-weight: bold;
   line-height: 58px;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   transition: 0.2s;
 }
 
 .header a:hover .logo {
-  color: #9443d8;
-  border: 2px solid #9443d8;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .header .menu .menu-list {
@@ -61,13 +74,13 @@ body.body-no-scroll {
 }
 
 .header .menu .dropdown:hover > a {
-  background-color: #9443d8;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   border-radius: 12px 12px 0 0;
 }
 
 .header .menu .projects-li:hover > a {
-  background-color: #9443d8;
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 50px;
 }
@@ -87,10 +100,10 @@ body.body-no-scroll {
   top: calc(100% + 10px); 
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background: rgba(27, 26, 40, 0.75);
+  background: var(--surface-color);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--surface-border-color);
   border-radius: 0px 0px 12px 12px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   width: 183px;
@@ -125,7 +138,7 @@ body.body-no-scroll {
   border-radius: 6px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--text-color);
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -133,7 +146,7 @@ body.body-no-scroll {
 
 .header .menu .dropdown-menu li a:hover,
 .header .menu .dropdown-menu li button:hover {
-  background-color: #9443d8;
+  background-color: var(--primary-color);
 }
 
 .header,
@@ -164,13 +177,13 @@ body.body-no-scroll {
 }
 
 .home .informations h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 45px;
   margin-bottom: 20px;
 }
 
 .home .informations p {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -187,7 +200,7 @@ body.body-no-scroll {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid var(--text-color);
   position: relative;
   overflow: hidden;
   transition: 0.3s;
@@ -196,7 +209,7 @@ body.body-no-scroll {
 
 .home .social-media li a i {
   font-size: 26px;
-  color: #fff;
+  color: var(--text-color);
   position: relative;
   z-index: 2;
   transition: color 0.4s ease-in-out;
@@ -291,7 +304,7 @@ body.body-no-scroll {
   background-color: #0c0c0c;
   border-radius: 12px;
   overflow: hidden;
-  display: flex;
+  display: none;
   position: relative;
   border: 1px solid #2e2e2e;
   transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -300,12 +313,12 @@ body.body-no-scroll {
 
 .projects .project:hover {
   transform: translateY(-8px);
-  border-color: #9443d8;
+  border-color: var(--primary-color);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .projects .project.active {
-  display: block;
+  display: flex;
 }
 
 .projects .project a {
@@ -381,7 +394,7 @@ body.body-no-scroll {
 }
 
 .projects .project .technologies li span:hover {
-  background-color: rgba(148, 67, 216, 0.7);
+  background-color: var(--primary-color-shadow);
   color: #fff;
 }
 
@@ -391,7 +404,7 @@ body.body-no-scroll {
 
 .projects .btn-show-projects {
   background: none;
-  border: 1px solid #fff;
+  border: 1px solid var(--text-color);
   border-radius: 15px;
   width: 180px;
   padding: 20px;
@@ -409,7 +422,7 @@ body.body-no-scroll {
 }
 
 .projects .btn-show-projects:hover {
-  background-color: #9443d8;
+  background-color: var(--primary-color);
   transition: 0.3s;
 }
 
@@ -422,19 +435,12 @@ body.body-no-scroll {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.045);
-  padding: 50px 20px;
-  min-height: 90vh;
+  padding: 90px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-}
-
-.certificates p {
-  text-align: center;
-  font-size: 20px;
-  max-width: 600px;
 }
 
 .skills {
@@ -449,13 +455,21 @@ body.body-no-scroll {
   font-size: 45px;
   font-weight: 500;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 10px #9543d885);
+  filter: drop-shadow(0 0 10px var(--primary-color-shadow));
 }
 
-.form-container .title {
+.certificates .title {
   filter: none;
   font-size: 40px;
+  margin-bottom: 8px;
 }
+
+.certificates p {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
 
 .skills .container-skills {
   display: flex;
@@ -470,11 +484,11 @@ body.body-no-scroll {
   gap: 20px;
   border-radius: 14px;
   padding: 25px;
-  background: rgba(27, 26, 40, 0.75);
+  background: var(--surface-color);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--surface-border-color);
 }
 
 .skills .container-skills:hover {
@@ -504,7 +518,7 @@ body.body-no-scroll {
 .skills .container-skills .skill-item span {
   font-size: 16px;
   font-weight: 500;
-  color: #c4c4c4;
+  color: var(--text-secondary-color);
   transition: color 0.3s ease;
 }
 
@@ -524,7 +538,7 @@ body.body-no-scroll {
 }
 
 .skills .container-skills .skill-item:hover img {
-  filter: drop-shadow(0 0 10px #9543d885);
+  filter: drop-shadow(0 0 10px var(--primary-color-shadow));
 }
 
 .skills .container-skills .skill-item:hover span {
@@ -570,6 +584,8 @@ body.body-no-scroll {
 .form-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 100%;
   background: rgb(27, 26, 26);
@@ -577,12 +593,13 @@ body.body-no-scroll {
 }
 
 .form-container .title {
-  margin: 0 40px;
+  margin: 0;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  
   gap: 15px;
   max-width: 600px;
   margin: auto;
@@ -591,7 +608,7 @@ body.body-no-scroll {
 
 .form label {
   font-size: 18px;
-  color: #c4c4c4;
+  color: var(--text-secondary-color);
   margin-bottom: 5px;
 }
 
@@ -600,10 +617,10 @@ body.body-no-scroll {
   width: 100%;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--surface-border-color);
   border-radius: 8px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  font-family: var(--font-primary);
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -615,8 +632,8 @@ body.body-no-scroll {
 
 .form input:focus,
 .form textarea:focus {
-  border-color: #9443d8;
-  box-shadow: 0 0 10px rgba(148, 67, 216, 0.5);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color-shadow);
 }
 
 .form textarea {
@@ -625,8 +642,8 @@ body.body-no-scroll {
 }
 
 .form .btn-submit {
-  background-color: #9443d8;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   border: none;
   border-radius: 15px;
   padding: 20px;
@@ -638,7 +655,7 @@ body.body-no-scroll {
 }
 
 .form .btn-submit:hover {
-  background-color: #7a37b3;
+  background-color: var(--primary-color-darker);
   transform: translateY(-2px);
 }
 

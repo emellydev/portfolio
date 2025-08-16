@@ -2,6 +2,21 @@
   display: none;
 }
 
+.projects .projects-container {
+  padding: 0 30px;
+}
+
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
 @media (max-width: 1200px) {
   .header {
     padding: 30px;
@@ -19,35 +34,6 @@
     text-align: center;
     align-items: center;
   }
-}
-
-.projects .project {
-  max-width: 420px;
-  min-height: 400px;
-  position: relative;
-  display: none;
-}
-
-.projects .project img {
-  height: auto;
-  width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.projects .projects-container {
-  padding: 0 30px;
-}
-
-.menu-toggle {
-  display: none; 
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1100;
 }
 
 @media (max-width: 768px) {
