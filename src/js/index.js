@@ -48,7 +48,7 @@ document.documentElement.addEventListener("mousemove", (e) => {
 });
 
 // Typing effect
-const text = "Olá! sou a Emelly Beatriz.";
+const text = "Olá! Sou a Emelly Beatriz.";
 const typedEl = document.querySelector(".typed");
 
 let i = 0;
