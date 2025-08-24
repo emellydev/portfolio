@@ -81,7 +81,8 @@
 
   .header .menu li a:hover,
   .header .menu li button:hover {
-    background-color: transparent;
+    background-color: transparent !important;
+    color: inherit !important;
   }
 
   .header .menu .desktop-only {
@@ -133,6 +134,7 @@
   .form-container {
     padding: 50px 15px;
   }
+
 }
 
 @media (max-width: 425px) {

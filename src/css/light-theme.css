@@ -1,65 +1,66 @@
 html.light-mode {
   --bg-color: #f5f5f5;
-  --text-color: #333333;
+  --text-color: #020202;
+  --primary-color: #8846c2; 
+  --primary-color-darker: #69269c; 
+  --primary-color-shadow: #d1a5f585; 
   --surface-color: rgba(250, 250, 250, 0.9);
   --surface-border-color: rgba(0, 0, 0, 0.1);
   --text-secondary-color: #555555;
+  --text-on-primary: #ffffff; 
 
   color: var(--text-color);
   background-color: var(--bg-color);
-  background-image: none; 
+  background-image: none;
 }
 
-html.light-mode .header a .logo {
+html.light-mode body {
+  background-image: linear-gradient(150deg, var(--bg-color) 65%, rgb(219, 218, 219) 100%);
+}
+
+html.light-mode .logo {
   color: var(--text-color);
-  border: 2px solid var(--text-color);
 }
 
-html.light-mode .header a:hover .logo {
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
 
 html.light-mode .header .menu li a {
   color: var(--text-color);
 }
 
 html.light-mode .header .menu .dropdown .dropdown-menu {
-  background-color: rgba(250, 250, 250, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border-color);
 }
+
 
 html.light-mode .header .menu .dropdown-menu li a,
 html.light-mode .header .menu .dropdown-menu li button {
   color: var(--text-color);
 }
 
+
 html.light-mode .header .menu .dropdown-menu li a:hover,
 html.light-mode .header .menu .dropdown-menu li button:hover {
-  color: #ffffff;
-}
-
-html.light-mode .home .social-media li a {
-  border: 2px solid var(--text-color);
+  color: var(--text-on-primary);
 }
 
 html.light-mode .home .social-media li a:hover i {
-  color: #ffffff;
+  color: var(--text-on-primary);
 }
 
-html.light-mode .home .social-media li a i {
-  color: var(--text-color);
-}
+
 
 html.light-mode .home .foto.sombra-interna {
   background: linear-gradient(to right, #bc7bf5, #8df9c3, #89f3dc);
-  background-size: 180% 180%;
-  animation: gradient-animation 5s ease infinite;
 }
 
 html.light-mode .header .menu li a:hover {
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: var(--text-on-primary);
+}
+
+html.light-mode .header .menu .dropdown:hover > a {
+  color: var(--text-on-primary);
 }
 
 
@@ -71,61 +72,61 @@ html.light-mode .projects .project {
 
 html.light-mode .projects .btn-show-projects {
   color: var(--text-color);
-  border: 1px solid var(--text-color);
 }
 
 html.light-mode .projects .btn-show-projects:hover {
-  color: #ffffff;
-  background-color: var(--primary-color);
+  color: var(--text-on-primary);
 }
 
 html.light-mode .certificates,
 html.light-mode .skills {
-  background-color: rgba(238, 238, 238, 0.8);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: rgba(238, 238, 238, 0.833);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 html.light-mode .skills .title,
-html.light-mode .certificates .title {
+html.light-mode .certificates .title,
+html.light-mode .form-container .title {
   filter: none;
 }
 
 html.light-mode .skills .container-skills {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-html.light-mode .skills .container-skills .skill-item span {
-  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.936);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 html.light-mode .skills .container-skills .skill-item:hover span {
   font-weight: 600;
+  color: var(--text-color);
 }
 
 html.light-mode .form-container {
-  background: #2e2d2d;
+  background: #292727;
 }
 
 html.light-mode .form label {
-  color: #ffffff;
+  color: var(--text-on-primary);
 }
 
 html.light-mode .form input,
 html.light-mode .form textarea {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
   color: var(--text-color);
 }
 
 html.light-mode .form input::placeholder,
 html.light-mode .form textarea::placeholder {
-  color: #999;
+  color: #a0a0a0;
 }
 
 html.light-mode .form-container .title {
-  color: #ffffff;
+  color: var(--text-on-primary);
+}
+
+
+html.light-mode .form .btn-submit {
+  color: var(--text-on-primary);
 }
 
 html.light-mode .header .menu.menu-open {
@@ -136,5 +137,4 @@ html.light-mode .header .menu.menu-open {
   html.light-mode .menu-toggle {
     color: var(--text-color);
   }
-
 }

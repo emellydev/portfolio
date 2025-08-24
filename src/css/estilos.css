@@ -5,9 +5,9 @@ html {
   /* === COLORS === */
   --bg-color: #000000;
   --text-color: #ffffff;
-  --primary-color: #9443d8;
-  --primary-color-darker: #7a37b3;
-  --primary-color-shadow: #9543d885;
+  --primary-color: #7a37b3;
+  --primary-color-darker: #5a2483;
+  --primary-color-shadow: #d1a5f585;
   --surface-color: rgba(27, 26, 40, 0.75);
   --surface-border-color: rgba(255, 255, 255, 0.1);
   --text-secondary-color: #c4c4c4;
@@ -83,18 +83,19 @@ body.body-no-scroll {
   font-size: 20px;
   text-transform: capitalize;
   padding: 10px 20px;
-  transition: 0.2s;
+
 }
 
 .header .menu .dropdown:hover > a {
   background-color: var(--primary-color);
+  border-radius:var(--border-radius-md) var(--border-radius-md) 0px 0px ;
   color: var(--text-color);
-  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+
 }
 
 .header .menu .projects-li:hover > a {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-color);
   border-radius: 50px;
 }
 
@@ -110,22 +111,19 @@ body.body-no-scroll {
 
 .header .menu .dropdown .dropdown-menu {
   position: absolute;
-  top: calc(100% + 10px); 
+  top: calc(100% + 8px); 
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
   background: var(--surface-color);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--surface-border-color);
-  border-radius: 0px 0px var(--border-radius-md) var(--border-radius-md);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  width: 183px;
+  width: 100%;
   padding: 8px;
   list-style: none;
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
   overflow: hidden;
 }
 
@@ -160,6 +158,7 @@ body.body-no-scroll {
 .header .menu .dropdown-menu li a:hover,
 .header .menu .dropdown-menu li button:hover {
   background-color: var(--primary-color);
+
 }
 
 /*
@@ -816,3 +815,4 @@ body.body-no-scroll {
   50% { transform: rotate(1deg); }
   75% { transform: rotate(-0.80deg); }
 }
+
