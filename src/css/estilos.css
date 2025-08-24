@@ -2,7 +2,7 @@ html {
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Raleway", sans-serif;
 
-  /* Dark Theme Colors */
+  /* === COLORS === */
   --bg-color: #000000;
   --text-color: #ffffff;
   --primary-color: #9443d8;
@@ -12,8 +12,23 @@ html {
   --surface-border-color: rgba(255, 255, 255, 0.1);
   --text-secondary-color: #c4c4c4;
 
+  /* === SIZING & RADIUS === */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-circle: 50%;
+
   color: var(--text-color);
   scroll-behavior: smooth;
+  background-color: var(--bg-color);
+}
+
+/*
+ * ===== BASE & LAYOUT =====
+ */
+
+body {
+  font-family: var(--font-primary);
+  position: relative;
   background-color: var(--bg-color);
   background-image: radial-gradient(
       circle 600px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
@@ -25,15 +40,13 @@ html {
   background-attachment: fixed;
 }
 
-body {
-  font-family: var(--font-primary);
-  position: relative;
-  background-color: transparent;
-}
-
 body.body-no-scroll {
   overflow: hidden;
 }
+
+/*
+ * ===== HEADER =====
+ */
 
 .header {
   display: flex;
@@ -45,7 +58,7 @@ body.body-no-scroll {
 .header .logo {
   width: 65px;
   height: 65px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   border: 2.5px solid var(--text-color);
   text-align: center;
   font-size: 28px;
@@ -76,7 +89,7 @@ body.body-no-scroll {
 .header .menu .dropdown:hover > a {
   background-color: var(--primary-color);
   color: var(--text-color);
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 }
 
 .header .menu .projects-li:hover > a {
@@ -104,7 +117,7 @@ body.body-no-scroll {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--surface-border-color);
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px var(--border-radius-md) var(--border-radius-md);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   width: 183px;
   padding: 8px;
@@ -135,7 +148,7 @@ body.body-no-scroll {
   text-transform: none;
   transition: background-color 0.2s ease;
   width: 100%;
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   background: transparent;
   border: none;
   color: var(--text-color);
@@ -149,6 +162,10 @@ body.body-no-scroll {
   background-color: var(--primary-color);
 }
 
+/*
+ * ===== HOME SECTION =====
+ */
+
 .header,
 .home {
   margin: 0 auto;
@@ -159,8 +176,8 @@ body.body-no-scroll {
   display: flex;
   min-height: calc(100vh - 125px);
   align-items: center;
-  gap: 40px;
-  justify-content: space-between;
+  gap: 60px;
+  justify-content: center;
 }
 
 .home .informations {
@@ -199,7 +216,7 @@ body.body-no-scroll {
   align-items: center;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   border: 2px solid var(--text-color);
   position: relative;
   overflow: hidden;
@@ -260,13 +277,13 @@ body.body-no-scroll {
 
 .home .photo-container .foto {
   max-width: 400px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
 }
 
 .home .photo-container img {
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
 }
 
 .home .foto.sombra-interna {
@@ -275,6 +292,10 @@ body.body-no-scroll {
   animation: gradient-animation 5s ease infinite;
 }
 
+/*
+ * ===== PROJECTS SECTION =====
+ */
+
 .projects {
   padding: 70px 0 70px;
   margin: 0 auto;
@@ -282,11 +303,13 @@ body.body-no-scroll {
 }
 
 .projects .title {
-  text-align: center;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: center;
   padding: 60px 0;
-  font-size: 45px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .projects .projects-container {
@@ -297,24 +320,30 @@ body.body-no-scroll {
   justify-content: center;
 }
 
+.project-image-wrapper {
+  position: relative;
+  order: 2;
+  line-height: 0;
+  overflow: hidden;
+}
+
 .projects .project {
   max-width: 420px;
   max-height: none;
   min-height: 400px;
-  background-color: #0c0c0c;
-  border-radius: 12px;
+  background-color: #00000076;
+  border-radius: var(--border-radius-md);
   overflow: hidden;
   display: none;
   position: relative;
-  border: 1px solid #2e2e2e;
+  border: 1px solid #1d1c1c;
   transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  will-change: transform;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .projects .project:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  will-change: transform; 
+  border: 1.7px solid var(--primary-color);
 }
 
 .projects .project.active {
@@ -335,7 +364,7 @@ body.body-no-scroll {
   object-fit: cover;
   border-radius: 0px;
   background-color: #111;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .projects .project .project-content {
@@ -343,6 +372,8 @@ body.body-no-scroll {
   color: #111;
   padding: 20px;
   flex-grow: 1;
+  order: 3;
+  transition: all 0.4s ease-in-out;
 }
 
 .projects .project .project-content h3 {
@@ -356,50 +387,86 @@ body.body-no-scroll {
 }
 
 .projects .project .project-information {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  text-align: left;
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  padding: 18px;
-  background: linear-gradient(to top, rgba(12, 12, 12, 1) 20%, rgba(12, 12, 12, 0.7) 60%, transparent 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
+  gap: 25px;
+  padding: 20px 20px 30px 8px;
+  text-align: left;
+  font-weight: 600;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.645) 10%, rgba(0, 0, 0, 0.207) 90%, transparent 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  pointer-events: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.projects .project .project-information p {
+  padding-top: 8px;
+  margin-bottom: -10px;
 }
 
 .projects .project .technologies {
   display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  row-gap: 17px;
+  flex-wrap: nowrap;
+  gap: 8px;
   justify-content: left;
+  padding-bottom: 5px;
+}
+
+.projects .project .project-information::-webkit-scrollbar {
+  display: 5px;
+}
+
+.projects .project .project-information::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects .project .project-information::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
 }
 
 .projects .project .technologies li span {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  padding: 5px 10px;
+  padding: 6px 12px;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: background-color 0.3s ease;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .projects .project .technologies li span:hover {
-  background-color: var(--primary-color-shadow);
+  background-color: var(--primary-color);
   color: #fff;
+  border-color: var(--primary-color-darker);
+}
+
+.projects .project:hover img {
+  transform: scale(1.05);
 }
 
 .projects .project:hover .project-information {
   opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .projects .btn-show-projects {
@@ -430,6 +497,10 @@ body.body-no-scroll {
   display: none;
 }
 
+/*
+ * ===== SKILLS & CERTIFICATES SECTIONS =====
+ */
+
 .certificates, .skills {
   background-color: rgba(22, 20, 37, 0.649);
   backdrop-filter: blur(10px);
@@ -447,20 +518,30 @@ body.body-no-scroll {
   margin-bottom: 5px;
 }
 
+/* --- Section Titles --- */
+.projects .title,
 .skills .title,
 .certificates .title,
 .form-container .title {
   text-align: center;
-  margin-bottom: 30px;
   font-size: 45px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.projects .title {
+  padding: 60px 0;
+}
+
+.skills .title,
+.form-container .title {
+  margin-bottom: 30px;
   filter: drop-shadow(0 0 10px var(--primary-color-shadow));
 }
 
 .certificates .title {
-  filter: none;
   font-size: 40px;
+  filter: none;
   margin-bottom: 8px;
 }
 
@@ -469,7 +550,6 @@ body.body-no-scroll {
   font-size: 25px;
   margin-bottom: 15px;
 }
-
 
 .skills .container-skills {
   display: flex;
@@ -482,7 +562,7 @@ body.body-no-scroll {
   flex: 1;
   flex-basis: auto;
   gap: 20px;
-  border-radius: 14px;
+  border-radius: var(--border-radius-md);
   padding: 25px;
   background: var(--surface-color);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
@@ -567,7 +647,7 @@ body.body-no-scroll {
   width: 400px;
   height: 300px;
   background-color: #f3f3f3f4;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -581,6 +661,10 @@ body.body-no-scroll {
   animation-play-state: paused;
 }
 
+/*
+ * ===== CONTACT FORM =====
+ */
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -589,17 +673,12 @@ body.body-no-scroll {
   gap: 20px;
   width: 100%;
   background: rgb(27, 26, 26);
-  padding: 65px 20px;
-}
-
-.form-container .title {
-  margin: 0;
+  padding: 70px 0px 40px 0px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  
   gap: 15px;
   max-width: 600px;
   margin: auto;
@@ -618,7 +697,7 @@ body.body-no-scroll {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--surface-border-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius-sm);
   color: var(--text-color);
   font-family: var(--font-primary);
   font-size: 16px;
@@ -659,15 +738,19 @@ body.body-no-scroll {
   transform: translateY(-2px);
 }
 
+/*
+ * ===== UTILITIES & HELPERS =====
+ */
+
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 50px;
   height: 50px;
-  background-color: #00bf82;
+  background-color: var(--primary-color);
   color: #fff;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   border: none;
   cursor: pointer;
   display: flex;
@@ -686,6 +769,10 @@ body.body-no-scroll {
   visibility: visible;
   transform: translateY(0);
 }
+
+/*
+ * ===== KEYFRAMES =====
+ */
 
 @keyframes gradient-animation {
   0% {
