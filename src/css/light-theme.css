@@ -1,5 +1,5 @@
 html.light-mode {
-  --bg-color: #f5f5f5;
+  --bg-color: #ffffff;
   --text-color: #020202;
   --primary-color: #8846c2; 
   --primary-color-darker: #69269c; 
@@ -8,14 +8,10 @@ html.light-mode {
   --surface-border-color: rgba(0, 0, 0, 0.1);
   --text-secondary-color: #555555;
   --text-on-primary: #ffffff; 
-
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  background-image: none;
 }
 
 html.light-mode body {
-  background-image: linear-gradient(150deg, var(--bg-color) 65%, rgb(219, 218, 219) 100%);
+  background-image: linear-gradient(150deg, var(--bg-color) 65%, rgb(205, 204, 205) 100%);
 }
 
 html.light-mode .logo {
@@ -44,11 +40,12 @@ html.light-mode .header .menu .dropdown-menu li button:hover {
   color: var(--text-on-primary);
 }
 
+html.light-mode .informations strong {
+  color: #944fd1;
+}
 html.light-mode .home .social-media li a:hover i {
   color: var(--text-on-primary);
 }
-
-
 
 html.light-mode .home .foto.sombra-interna {
   background: linear-gradient(to right, #bc7bf5, #8df9c3, #89f3dc);

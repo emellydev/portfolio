@@ -3,8 +3,8 @@ html {
   --font-secondary: "Raleway", sans-serif;
 
   /* === COLORS === */
-  --bg-color: #000000;
   --text-color: #ffffff;
+  --bg-color: #110606;
   --primary-color: #7a37b3;
   --primary-color-darker: #5a2483;
   --primary-color-shadow: #d1a5f585;
@@ -17,27 +17,27 @@ html {
   --border-radius-md: 12px;
   --border-radius-circle: 50%;
 
+  background-color: var(--bg-color);
   color: var(--text-color);
   scroll-behavior: smooth;
-  background-color: var(--bg-color);
-}
-
-/*
- * ===== BASE & LAYOUT =====
- */
-
-body {
-  font-family: var(--font-primary);
-  position: relative;
-  background-color: var(--bg-color);
-  background-image: radial-gradient(
+  background-image: radial-gradient( 
       circle 600px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
       rgba(255, 255, 255, 0.122),
       transparent 80%
-    ),
-    linear-gradient(150deg, var(--bg-color), #9e00ff);
+    );
   background-repeat: no-repeat;
+  overscroll-behavior-y: contain;
+}
+
+
+/*
+* ===== BASE & LAYOUT =====
+*/
+
+body {
+  font-family: var(--font-primary);
   background-attachment: fixed;
+  background-image: linear-gradient(150deg, var(--bg-color), #9e00ff);
 }
 
 body.body-no-scroll {
@@ -815,4 +815,3 @@ body.body-no-scroll {
   50% { transform: rotate(1deg); }
   75% { transform: rotate(-0.80deg); }
 }
-
