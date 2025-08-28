@@ -38,6 +38,16 @@
 }
 
 @media (max-width: 768px) {
+  body {
+    background-image: linear-gradient(150deg, var(--bg-color), #9e00ff);
+    background-attachment: scroll;
+  }
+
+  html.light-mode body {
+    background-image: linear-gradient(150deg, var(--bg-color) 65%, rgb(205, 204, 205) 100%);
+    background-attachment: scroll;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -75,9 +85,10 @@
     background: transparent;
     border: none;
     text-transform: capitalize;
-    padding: 10px 20px;
     font-family: inherit;
     color: inherit;
+    margin: 0; 
+    line-height: inherit; 
   }
 
   .header .menu li a:hover,
@@ -115,12 +126,22 @@
     font-size: 18px;
   }
 
-  .home .photo-container .foto {
+  .home .photo-container .photo {
     max-width: 300px;
+    
   }
 
   .projects .project {
     max-width: 340px;
+  }
+
+
+  .project.active.in-view:nth-child(odd) {
+    animation: fadeInLeft 0.8s var(--timing-function-smooth) 0.2s forwards;
+  }
+
+  .project.active.in-view:nth-child(even) {
+    animation: fadeInRight 0.8s var(--timing-function-smooth) 0.2s forwards;
   }
 
   .skills .container-skills {
@@ -138,15 +159,11 @@
 
 }
 
-@media (max-width: 600px) {
-  body {
-    background-image: none;
-    background-color: #111;
-  }
-}
-
 @media (max-width: 425px) {
-
+  body {
+    background-color: #252525;
+    background-image: none;
+  }
   
   .home .informations h1 {
     font-size: 30px;
