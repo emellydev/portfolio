@@ -19,7 +19,10 @@ function hideProjects() {
   });
   showProjectsButton.classList.remove("active");
   showProjectsButton.textContent = "Mostrar mais";
-  projectsSection.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    projectsSection.scrollIntoView();
+  }, 100);
 }
 
 // Show more projects
@@ -131,10 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
   createAnimationObserver('.home .photo.inner-shadow', 'animate-gradient', 0.2);
   createAnimationObserver('.home .informations', 'fadeInLeft', 0.2);
   createAnimationObserver('.home .photo-container', 'fadeInRight', 0.2);
-  createAnimationObserver('.title', 'fadeInUp', 0.5);
-  createAnimationObserver('.certificates-text', 'fadeInUp', 0.5);
-  createAnimationObserver('.skills', 'in-view', 0.4);
+  createAnimationObserver('.projects', 'in-view', 0.1);
+  createAnimationObserver('.certificates', 'in-view', 0.25);
+  createAnimationObserver('.skills', 'in-view', 0.25);
   createAnimationObserver('.project', 'in-view', 0.2);
   createAnimationObserver('.btn-show-projects', 'in-view', 0.2);
-  createAnimationObserver('.form', 'fadeInLeft', 0.1);
+  createAnimationObserver('.form-container', 'in-view', 0.15);
 });
